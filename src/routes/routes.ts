@@ -20,7 +20,7 @@ const Lazy3 = lazy( () => import( /* webpackChunkName: "LazyPage3" */ '../01-laz
 
 export const routes: Route[] = [
     {
-        path: '/lazyload/*',
+        path: '/lazyload/*', //aqui le decimos a react router que las demas rutas que carguen usen de base el path lazyload en este caso
         to: '/lazyload',
         Component: LazyLayout,
         name: 'Lazy Layout'
