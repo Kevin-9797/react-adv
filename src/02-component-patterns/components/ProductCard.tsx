@@ -3,7 +3,7 @@
 import styles from '../styles/styles.module.css'
 import { ReactElement, createContext, useContext, useState } from 'react'
 import { useProduct } from '../hooks/useProduct';
-import { ProductContextProps, ProductCardProps } from '../interfaces/products.interfaces';
+import { ProductContextProps, Product } from '../interfaces/products.interfaces';
 import { ProductTitle } from '.';
 
 
@@ -11,17 +11,18 @@ import { ProductTitle } from '.';
 export const ProductContext = createContext( {} as ProductContextProps );
 const { Provider } = ProductContext;
 
-
-
-
-
-interface ProductButtonsProps {
-    increaseBy: ( value: number ) => void,
-    value: number;
-
+export interface Props {
+    product: Product;
+    children?: ReactElement | ReactElement[];
+    className: string;
+    style?: React.CSSProperties;
 }
 
-export const ProductCard = ( { product, children }: ProductCardProps ) => {
+
+
+
+
+export const ProductCard = ( { product, children,className, style  }: Props ) => {
 
 const { value, increaseBy } = useProduct();
  
@@ -32,7 +33,8 @@ const { value, increaseBy } = useProduct();
         product
     }}>
 
-        <div className={ styles.productCard }>
+        <div className={ `${ styles.productCard } ${ className }` } 
+             style={ style }>
 
             { children }
             {/* <ProductImage img={ product.img } />
