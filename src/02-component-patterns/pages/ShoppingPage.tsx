@@ -10,9 +10,13 @@ import { products } from "../data/products";
 
 
 export const ShoppingPage = () => {
-  const { onProductCountChange, keyValueShoppingCart, shoppingCart } = useShoppingCart();
-
     
+
+
+
+
+
+
   return (
     <div>
         <h1>Shopping Store</h1>
@@ -22,22 +26,37 @@ export const ShoppingPage = () => {
             flexWrap: 'wrap'
         }}>
  
-          {
-            products.map( ( product:Product ) => (
-
-              <ProductCard key={ product.id }
-                          product={product} 
+        
+              <ProductCard key={ products[0].id }
+                          product={products[0]} 
                           className="bg-dark "
-                          onChange={ onProductCountChange }
-                          value={ shoppingCart[product.id]?.count || 0  } // aqui decimos que si el valor es nullo le asignamos 0
+                          initialValues={{
+                            count: 4,
+                            maxCount: 10
+                          }}
                           >
-                  <ProductCard.Img className="custom-image" />
-                  <ProductCard.Title title={ 'Cafè' } className="text-white" />
-                  <ProductCard.Buttons className="custom-buttons" />
+                            {
+                              ( { reset,increaseBy,isMaxCountReached, count }) => (
+                                <>
+                                
+                                  <ProductCard.Img className="custom-image" />
+                                  <ProductCard.Title title={ 'Cafè' } className="text-white" />
+                                  <ProductCard.Buttons  className="custom-buttons" />
+                                  <button onClick={ () => increaseBy(-2)} >-2</button>
+                                  <button  style={{
+                                    display: isMaxCountReached ? 'none' : 'block'
+                                  }}
+                                  onClick={ () => increaseBy(2)}>+2</button>
+                                  <span>{count}</span>
+                                </>
+
+
+                              )
+                            }
               </ProductCard>
-            ))
-          }
-            <div className="shopping-cart">
+                          
+     
+      {/* <div className="shopping-cart">
 
               {
                   keyValueShoppingCart.map( ([key,product]) => (
@@ -64,10 +83,9 @@ export const ShoppingPage = () => {
 
                   ))
               }
-              </div>
+              </div> */}
               <div>
                 <code>
-                  { JSON.stringify(shoppingCart,null,5)}
                 </code>
               </div>
         </div>
