@@ -3,6 +3,12 @@ import logo from '../logo.svg'
 import { routes } from './routes';
 import { Suspense } from "react";
 import { ShoppingPage } from "../02-component-patterns/pages/ShoppingPage";
+import { FormikYupPage ,
+         FormikAbstraccion,
+         FormikComponents,
+         FormikBasicPage} from '../03-forms/pages/';
+
+FormikAbstraccion
 export const Navigation = () => {
 
 
@@ -15,13 +21,30 @@ export const Navigation = () => {
                                   <img src={ logo }  alt="react-logo"/>
                                   <ul>
                                         <li>
-                                            <NavLink to="shopping-page" className={ ({isActive}) => isActive ? 'nav-active' : ''  } >ShoppingPage</NavLink>
+                                            <NavLink to="/shopping-page" className={ ({isActive}) => isActive ? 'nav-active' : ''  } >ShoppingPage</NavLink>
                                         </li>
-                                      
+                                        <li>
+                                            <NavLink to="/formik-basic" className={ ({isActive}) => isActive ? 'nav-active' : ''  } >Formik Basic</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/formik-yup" className={ ({isActive}) => isActive ? 'nav-active' : ''  } >Formik Yup</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/formik-component" className={ ({isActive}) => isActive ? 'nav-active' : ''  } >Formik Component</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/formik-abstraction" className={ ({isActive}) => isActive ? 'nav-active' : ''  } >Formik Abstraction</NavLink>
+                                        </li>
                                   </ul>
                               </nav>
                           <Routes>
-                               <Route path="shopping-page" element={<ShoppingPage  /> } />
+                               <Route path="/shopping-page" element={<ShoppingPage  /> } />
+                               <Route path="/formik-basic" element={<FormikBasicPage  /> } />
+                               <Route path="/formik-yup" element={<FormikYupPage  /> } />
+                               <Route path="/formik-component" element={<FormikComponents  /> } />
+                               <Route path="/formik-abstraction" element={<FormikAbstraccion  /> } />
+
+
                           
                                <Route path="/*" element={<Navigate replace to="shopping-page" />} />
       

@@ -7,7 +7,7 @@ export interface Props{
  }
 
 export const ProductTitle = ( { title, className }: Props  ) => {
-
+    
 
     return (
         <span className={ `${ styles.productDescription } ${ className }` } > {title} </span>
