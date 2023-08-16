@@ -1,0 +1,53 @@
+[
+
+    {
+        "type": "input",
+        "name": "firstName",
+        "placeholder": "First Name",
+        "label": "First Name",
+        "validations":[
+            {
+                "type": "required"
+            }
+        ],
+        "value": ""
+    },
+    {
+        "type": "input",
+        "name": "lastName",
+        "placeholder": "Last Name",
+        "label": "Last Name",
+        "value": ""
+    },
+    {
+        "type": "email",
+        "name": "email",
+        "placeholder": "Email",
+        "label": "Email",
+        "value": ""
+    },
+    {
+        "type": "select",
+        "name": "favoriteGame",
+        "placeholder": "Select",
+        "options": [
+            {
+                "id": 1,
+                "label": "Resident Evil"
+            },
+            {
+                "id": 2,
+                "label": "Mario Bros"
+            },
+            {
+                "id": 3,
+                "label": "Spiderman"
+            }
+        ],
+        "label": "Favorite Game",
+        "value": ""
+    }
+    
+
+
+]

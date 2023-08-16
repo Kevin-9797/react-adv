@@ -80,36 +80,36 @@ export const FormikAbstraccion = () => {
 
                     <Form>
 
-                    <MyTextInput label='First Name' 
-                                 type='text'
-                                 name='firstName' />  
+                        <MyTextInput label='First Name' 
+                                    type='text'
+                                    name='firstName' />  
 
-                    <MyTextInput label='Last Name'
-                                 type='text'
-                                 name='lastName' />  
+                        <MyTextInput label='Last Name'
+                                    type='text'
+                                    name='lastName' />  
 
-                    <MyTextInput label='Email'
-                                 type='email'
-                                 name='email' />  
+                        <MyTextInput label='Email'
+                                    type='email'
+                                    name='email' />  
 
-                      <MySelect label='Job Type' name="jobType" as="select">
+                        <MySelect label='Job Type' name="jobType" as="select">
 
-                        <option value="">Pick something</option>
-                        <option value="developer">Developer</option>
-                        <option value="designer">Designer</option>
-                        <option value="it-senior">It Senior</option>
+                          <option value="">Pick something</option>
+                          <option value="developer">Developer</option>
+                          <option value="designer">Designer</option>
+                          <option value="it-senior">It Senior</option>
 
 
-                      </MySelect>
-                      
+                        </MySelect>
+                        
 
-                      <label htmlFor="terms">
-                        <Field name="terms" type="checkbox" /> 
-                        Terms and conditions
-                        </label>
-                      <ErrorMessage name="terms" component="span"/>
-                      
-                      <button  type='submit'> submit</button>
+                        <label htmlFor="terms">
+                          <Field name="terms" type="checkbox" /> 
+                          Terms and conditions
+                          </label>
+                        <ErrorMessage name="terms" component="span"/>
+                        
+                        <button  type='submit'> submit</button>
 
                     </Form>
 
